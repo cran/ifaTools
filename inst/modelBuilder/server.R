@@ -197,7 +197,7 @@ toScript <- function(input, rawData, recodeTable, permuteTable, itemModel, bayes
                         as.character(rawData$loadDemo)), collapse="\n")
   } else {
     loadData <- c("# Adjust the path in the next statement to load your data\n",
-                  paste0("data <- read.csv(file='",rawData$name,"'"))
+                  paste0("data <- read.csv(na.strings=c(), file='",rawData$name,"'"))
     if (!input$dataHeader) loadData <- c(loadData, ",header=FALSE")
     if (input$dataSep != ",") {
       loadData <- c(loadData, paste0(",sep='", input$dataSep, "'"))
@@ -222,7 +222,7 @@ toScript <- function(input, rawData, recodeTable, permuteTable, itemModel, bayes
 
   mker <- sapply(dcols, function(col) {
     im <- itemModel[[col]]
-    str <- c("rpf.", im$model, "(factors=numFactors")
+    str <- c("list(rpf.", im$model, "(factors=numFactors")
     if (im$model != "drm") {
       str <- c(str, ",outcomes=", im$outcomes)
     }
@@ -235,7 +235,7 @@ toScript <- function(input, rawData, recodeTable, permuteTable, itemModel, bayes
       }
       str <- c(str, ",T.a='", im$Ta, "', T.c=", tc)
     }
-    paste0(c(str, ")"), collapse="")
+    paste0(c(str, "))"), collapse="")
   })
 
   code <- rle(mker)
@@ -470,6 +470,10 @@ plotInformation(m1Grp, width=5, basis=basis)
     "",
     "imat <- mxMatrix(name='item', values=startingValues, free=!is.na(startingValues))",
     itemInit,
+    "# Remove non-factor columns (if any)",
+    "data <- data[,sapply(data, is.factor)]",
+    "# Remove all-missing rows",
+    "data <- data[rowSums(!is.na(data[,names(spec)])) != 0,]",
     maybeCompress,
     paste0("itemModel <- mxModel(model='itemModel', imat,
            mxData(observed=data, type='raw'", freqDataArgs, "),
@@ -491,8 +495,8 @@ factors (`r ifelse(length(factors), factors, '-')`), -2LL=$`r m1Fit$output$fit`$
     "",
     "```{r,fig.height=2}
 got <- sumScoreEAPTest(m1Grp)
-df <- data.frame(score=as.numeric(names(got$observed)),
-            expected=got$expected, observed=got$observed)
+df <- data.frame(score=as.numeric(names(got[['observed']])),
+            expected=got[['expected']], observed=got[['observed']])
 df <- melt(df, id='score', variable.name='source', value.name='n')
 ggplot(df, aes(x=score, y=n, color=source)) + geom_line()
 ```",
@@ -931,7 +935,7 @@ shinyServer(function(input, output, session) {
     }
     args <- list(rawData$datapath, header=input$dataHeader,
                  sep=input$dataSep, quote=input$dataQuote,
-                 stringsAsFactors=FALSE, check.names=FALSE)
+                 stringsAsFactors=FALSE, check.names=FALSE, na.strings=c())
     
     if (input$dataRowNames) {
       args$row.names=1L

@@ -1,5 +1,5 @@
 ## ----echo=FALSE, cache=FALSE------------------------------------------------------------------------------------------
-require("knitr")
+suppressPackageStartupMessages(require("knitr"))
 options(width=120, scipen=2, digits=2)
 opts_chunk$set(echo=FALSE, cache=FALSE, highlight=FALSE, prompt=TRUE,
                comment=NA, background='#ffffff')

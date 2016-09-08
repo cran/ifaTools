@@ -1,4 +1,4 @@
-4f66220d95be64fab173c0e7508a3958 *DESCRIPTION
+225095aa87b6ccd627fb0d6923cd797f *DESCRIPTION
 d486ef239d278fb1509817f04d7bd13c *NAMESPACE
 0cbe574dfa777f38c087b4e0af24929c *R/apps.R
 3fb54d20b35634e9632fc6511ea29d54 *R/model.R
@@ -7,8 +7,8 @@ d5b0ab0791382f98c40a50a85b61f014 *R/prior.R
 3f5b17578220f4c30a28635d8b296a00 *README.md
 1e1b6fe0545e36f40361f85572508938 *build/vignette.rds
 f7dbf85ebda43f9a1f76806df7d1de77 *inst/doc/pritikin-schmidt.R
-eacd2c1dd762f0cd4040cf668772ab93 *inst/doc/pritikin-schmidt.Rnw
-67d017b13a6f0c339fbecadfe8c8f985 *inst/doc/pritikin-schmidt.pdf
+d7be603ea2e828dc8128882d6dd60d6b *inst/doc/pritikin-schmidt.Rnw
+c99109320aabef647c0751ec39db72bf *inst/doc/pritikin-schmidt.pdf
 10f313469d05856b2f794af5cec22720 *inst/example/exploratoryIFA.R
 e0abe3b711ff4ac44bd29c48179c9faa *inst/example/quadrature.R
 46da3745da2a37d6006f434a4770af32 *inst/itemModelExplorer/server.R
@@ -37,7 +37,7 @@ be20adfac9e045b3438c36fc4b9ff4a0 *man/plotInformation.Rd
 4c53c9037c3dbe621a44b86d699ebd33 *vignettes/g341-19.csv
 7b4f46dee1a3ec203406654039c0aa9f *vignettes/plotTwoFactors.R
 525ae14792a6b5061d1bb96bd00e2bd5 *vignettes/preschool.csv
-eacd2c1dd762f0cd4040cf668772ab93 *vignettes/pritikin-schmidt.Rnw
+d7be603ea2e828dc8128882d6dd60d6b *vignettes/pritikin-schmidt.Rnw
 a0640a77f5f3d190129c4bd6a24f3a8d *vignettes/pritikin-schmidt.bib
 5d946c36f9667776adcd45a53a0e8b7d *vignettes/quad.rda
 e0abe3b711ff4ac44bd29c48179c9faa *vignettes/quadrature.R

@@ -1,4 +1,5 @@
 ## ----echo=FALSE, cache=FALSE------------------------------------------------------------------------------------------
+#knit("pritikin-schmidt.Rnw", tangle=TRUE)  # to extract only the R chunks
 suppressPackageStartupMessages(require("knitr"))
 options(width=120, scipen=2, digits=2)
 opts_chunk$set(echo=FALSE, cache=FALSE, highlight=FALSE, prompt=TRUE,

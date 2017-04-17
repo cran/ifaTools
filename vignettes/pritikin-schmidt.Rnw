@@ -3,6 +3,7 @@
 %\VignetteDepends{gridExtra, plyr, xtable}
 \documentclass[a4paper]{report}
 \usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{03C7}{$\chi$}
 \usepackage[T1]{fontenc}
 \usepackage{RJournal}
 \usepackage{amsmath,amssymb,array}
@@ -68,6 +69,7 @@ point for custom analysis scripts.
 }
 
 <<echo=FALSE, cache=FALSE>>=
+#knit("pritikin-schmidt.Rnw", tangle=TRUE)  # to extract only the R chunks
 suppressPackageStartupMessages(require("knitr"))
 options(width=120, scipen=2, digits=2)
 opts_chunk$set(echo=FALSE, cache=FALSE, highlight=FALSE, prompt=TRUE,

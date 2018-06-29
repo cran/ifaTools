@@ -374,12 +374,15 @@ toScript <- function(input, rawData, recodeTable, permuteTable, itemModel, bayes
   
   freqCol <- input$freqColumnName
   maybeCompress <- list()
+  freqDataArgs <- ''
   # This is temporarily broken because of changes in OpenMx TODO
   # if (freqCol == '-') {
   #   maybeCompress <- "data <- compressDataFrame(data)"
   #   freqCol <- "freq"
   # }
-  freqDataArgs <- paste0(", frequency='", freqCol,"'")
+  if (freqCol != '-') {
+    freqDataArgs <- paste0(", frequency='", freqCol,"'")
+  }
   numExtraCol <- 1
   
   getRefModels <- ""
@@ -544,7 +547,7 @@ execRecodeRule <- function(rc, outcomes) {
 recodeOutcomes <- function(input, rawData, recodeTable, permuteTable) {
   dat <- rawData$val
   if (is.null(dat)) return(NULL)
-  ch <- dataColumnNames(input, rawData, permuteTable)
+  ch <- includedColumnNames(input, rawData, permuteTable)
   outcomes <- lapply(dat[,ch], function(col) {
     sort(unique(col))
   })

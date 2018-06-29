@@ -1,4 +1,4 @@
-1054364e4a63a7e332bbf154ef3065c3 *DESCRIPTION
+51ba185568fcdc0e22ef591a646d54ab *DESCRIPTION
 d486ef239d278fb1509817f04d7bd13c *NAMESPACE
 f43ecfacd7e18dc815745fc756157155 *R/apps.R
 3fb54d20b35634e9632fc6511ea29d54 *R/model.R
@@ -8,14 +8,14 @@ f43ecfacd7e18dc815745fc756157155 *R/apps.R
 57a9c5b58bbc61d52c679172cc34a53c *build/vignette.rds
 6a71fea083ff6f07a7d4f166107cdb61 *inst/doc/pritikin-schmidt.R
 4aa157a6a4afa9f89b61e3544fac3e52 *inst/doc/pritikin-schmidt.Rnw
-3ae86600902eb90292ad4314f43c3853 *inst/doc/pritikin-schmidt.pdf
+af52dda5ae104c42bfb78d0fb4f4d54b *inst/doc/pritikin-schmidt.pdf
 10f313469d05856b2f794af5cec22720 *inst/example/exploratoryIFA.R
 e0abe3b711ff4ac44bd29c48179c9faa *inst/example/quadrature.R
 46da3745da2a37d6006f434a4770af32 *inst/itemModelExplorer/server.R
 8c562db4078da91ba548ff875c58074d *inst/itemModelExplorer/ui.R
 608de8ea0f18fcb1ba05a948760ab73e *inst/modelBuilder/chooser.R
 582362908de063267c65e080339a489f *inst/modelBuilder/global.R
-c3c68b8cda5cb25f6c8cec540fa48a7e *inst/modelBuilder/server.R
+6fae785863f47910529355f055322668 *inst/modelBuilder/server.R
 2b5a9b517b5fbc66b3bfcef88674938c *inst/modelBuilder/ui.R
 890a51a037bfb40945bbb134e1a7ab1f *inst/modelBuilder/www/js/chooser-binding.js
 7361af2809d0bf6eb29e505fff03c8fc *inst/modelBuilder/www/js/jquery-ui.custom.min.js

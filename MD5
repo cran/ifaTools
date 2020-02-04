@@ -1,4 +1,4 @@
-2983c8d4bed36634062c867743c0b60b *DESCRIPTION
+7e4c700a488a5b4d9d55baa8f9ffab3f *DESCRIPTION
 d486ef239d278fb1509817f04d7bd13c *NAMESPACE
 f43ecfacd7e18dc815745fc756157155 *R/apps.R
 3fb54d20b35634e9632fc6511ea29d54 *R/model.R
@@ -6,9 +6,9 @@ f43ecfacd7e18dc815745fc756157155 *R/apps.R
 55c6c4513b1aa44aac6297e44b39f2e4 *R/prior.R
 3f5b17578220f4c30a28635d8b296a00 *README.md
 a0403146ad3e63ad1c4b4ea2d2e5ed45 *build/vignette.rds
-ade354b4b2317b62221742a60e6b08e1 *inst/doc/pritikin-schmidt.R
-7d0120775ecb81a29311034d46d5c2f0 *inst/doc/pritikin-schmidt.Rnw
-0f58995a00a6bd6cfa22aed212d0a79c *inst/doc/pritikin-schmidt.pdf
+4829703362474b63172a857810e5aca4 *inst/doc/pritikin-schmidt.R
+1bcf2a2c5d50198f3367af6ac36ecb4b *inst/doc/pritikin-schmidt.Rnw
+3c9fd26397f03aff2d0b79c0b7a2d49a *inst/doc/pritikin-schmidt.pdf
 10f313469d05856b2f794af5cec22720 *inst/example/exploratoryIFA.R
 e0abe3b711ff4ac44bd29c48179c9faa *inst/example/quadrature.R
 46da3745da2a37d6006f434a4770af32 *inst/itemModelExplorer/server.R
@@ -38,13 +38,14 @@ c3d18a344a2f111baedc5613fc9f96e7 *tests/testthat/test-prior.R
 5dd89c3dda8b2e96a3f1e2591893b248 *tools/build
 e8f7d19f1ccdf420ce53e37557ff8e32 *tools/check
 44f96bbfeb543e690fdb5679cfaf2ba6 *tools/install
-efce290814fd1b83117212da2a1ed13f *tools/rox
+124b5a6ea7c552a64b2bdc83314fb485 *tools/rox
 23176767b28fd781a63cedd301a854bc *tools/test
+66f8fdbeeaae09c999a0c6c7637bde48 *tools/vignetter
 7aa63dc39a51d9e6e9c7f73e31b2c2fb *vignettes/RJournal.sty
 4c53c9037c3dbe621a44b86d699ebd33 *vignettes/g341-19.csv
 7b4f46dee1a3ec203406654039c0aa9f *vignettes/plotTwoFactors.R
 525ae14792a6b5061d1bb96bd00e2bd5 *vignettes/preschool.csv
-7d0120775ecb81a29311034d46d5c2f0 *vignettes/pritikin-schmidt.Rnw
+1bcf2a2c5d50198f3367af6ac36ecb4b *vignettes/pritikin-schmidt.Rnw
 a0640a77f5f3d190129c4bd6a24f3a8d *vignettes/pritikin-schmidt.bib
 5d946c36f9667776adcd45a53a0e8b7d *vignettes/quad.rda
 e0abe3b711ff4ac44bd29c48179c9faa *vignettes/quadrature.R

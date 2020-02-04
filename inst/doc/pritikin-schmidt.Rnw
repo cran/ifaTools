@@ -850,6 +850,7 @@ computePlan <- mxComputeSequence(list(EM = emStep,
 m1Fit <- mxRun(container) ## \label{e1:run}
 
 m1Grp <- as.IFAgroup(m1Fit$itemModel, minItemsPerScore = 1L)  ## \label{e1:ifagroup}
+m1Grp$weightColumn <- 'freq'
 ```
 \end{lstlisting}
 
@@ -901,7 +902,8 @@ for (lab1 in unique(imat$labels[hasLabel])) {
 }
 data <- compressDataFrame(data, .asNumeric=TRUE)
 itemModel <- mxModel(model='itemModel', imat,
-           mxData(observed=data, type='raw', , weight='freq'),
+           mxData(observed=data, type='raw',
+                  weight='freq'),
            mxExpectationBA81(ItemSpec=spec),
            mxFitFunctionML())
 
@@ -923,6 +925,7 @@ container <- mxModel(container, computePlan)
 m1Fit <- mxRun(container, silent=TRUE)
 
 m1Grp <- as.IFAgroup(m1Fit$itemModel, minItemsPerScore=1L)
+m1Grp$weightColumn <- 'freq'
 @ 
 
 The details of the generated report are likely to evolve.
@@ -1380,8 +1383,9 @@ for (lab1 in unique(imat$labels[hasLabel])) {
     sample(imat$values[hasLabel & imat$labels==lab1], 1)
 }
 itemModel <- mxModel(model = 'itemModel', imat,
-           mxData(observed = data, type = 'raw', numObs = sum(data[['freq']]), sort = FALSE),
-           mxExpectationBA81(ItemSpec = spec, weightColumn = 'freq'),
+           mxData(observed = data, type = 'raw',
+                  weight='freq'),
+           mxExpectationBA81(ItemSpec = spec),
            mxFitFunctionML())
 
 
@@ -1396,6 +1400,7 @@ m1Fit <- mxRun(mxModel(itemModel, computePlan), silent = TRUE)
 if (abs(m1Fit$output$fit - 2767.48) > .1) stop("Fit not achieved")
 
 m1Grp <- as.IFAgroup(m1Fit, minItemsPerScore = 1L)
+m1Grp$weightColumn <- 'freq'
 @ 
 
 \begin{lstlisting}[name=cont]
@@ -1454,9 +1459,9 @@ for (lab1 in unique(imat$labels[hasLabel])) {
     sample(imat$values[hasLabel & imat$labels == lab1], 1)
 }
 itemModel <- mxModel(model = 'itemModel', imat,
-  mxData(observed = data, type = 'raw', numObs = sum(data[['freq']]),
-    sort = FALSE), ## \label{e3:sort}
-  mxExpectationBA81(ItemSpec = spec, weightColumn = 'freq'),
+  mxData(observed = data, type = 'raw',
+    weight="freq"), ## \label{e3:sort}
+  mxExpectationBA81(ItemSpec = spec),
   mxFitFunctionML())
 
 emStep <- mxComputeEM('itemModel.expectation', 'scores',
@@ -1470,6 +1475,8 @@ computePlan <- mxComputeSequence(list(emStep,
 m1Fit <- mxRun(mxModel(itemModel, computePlan))
 
 m1Grp <- as.IFAgroup(m1Fit, minItemsPerScore = 1L)
+m1Grp$weightColumn <- 'freq'
+
 ```
 \end{lstlisting}
 
@@ -1513,7 +1520,7 @@ summary(m1Fit, refModels = mxRefModels(m1Fit, run = TRUE))  ## \label{e3:refMode
 \end{lstlisting}
 
 <<>>=
-suppressWarnings(suppressMessages(summary(m1Fit, refModels=mxRefModels(m1Fit, run = TRUE))))
+summary(m1Fit, refModels=mxRefModels(m1Fit, run = TRUE))
 @ 
 
 \begin{wrapfigure}{r}{0.5\textwidth}

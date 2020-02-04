@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ ! -d vignettes ]; then
+    echo "Must be run from the top directory"
+    exit 1
+fi
+
+# Not sure why RStudio keeps changing the hashes in the knitr cache
+
+export NOT_CRAN=true
+cd vignettes
+
+name=pritikin-schmidt
+
+# Re-run 3 times to get bibliographic changes through
+
+Rscript -e "library(knitr); knit('$name.Rnw')"
+if grep --fixed-strings '\color{errorcolor}' "$name.tex"; then
+  exit 1
+fi
+[ -d gen ] || mkdir gen
+pdflatex $name
+bibtex $name

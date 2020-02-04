@@ -90,7 +90,8 @@ for (lab1 in unique(imat$labels[hasLabel])) {
 }
 data <- compressDataFrame(data, .asNumeric=TRUE)
 itemModel <- mxModel(model='itemModel', imat,
-           mxData(observed=data, type='raw', , weight='freq'),
+           mxData(observed=data, type='raw',
+                  weight='freq'),
            mxExpectationBA81(ItemSpec=spec),
            mxFitFunctionML())
 
@@ -112,6 +113,7 @@ container <- mxModel(container, computePlan)
 m1Fit <- mxRun(container, silent=TRUE)
 
 m1Grp <- as.IFAgroup(m1Fit$itemModel, minItemsPerScore=1L)
+m1Grp$weightColumn <- 'freq'
 
 ## ----fig.height=2.5---------------------------------------------------------------------------------------------------
 got <- sumScoreEAPTest(m1Grp)
@@ -191,8 +193,9 @@ for (lab1 in unique(imat$labels[hasLabel])) {
     sample(imat$values[hasLabel & imat$labels==lab1], 1)
 }
 itemModel <- mxModel(model = 'itemModel', imat,
-           mxData(observed = data, type = 'raw', numObs = sum(data[['freq']]), sort = FALSE),
-           mxExpectationBA81(ItemSpec = spec, weightColumn = 'freq'),
+           mxData(observed = data, type = 'raw',
+                  weight='freq'),
+           mxExpectationBA81(ItemSpec = spec),
            mxFitFunctionML())
 
 
@@ -207,6 +210,7 @@ m1Fit <- mxRun(mxModel(itemModel, computePlan), silent = TRUE)
 if (abs(m1Fit$output$fit - 2767.48) > .1) stop("Fit not achieved")
 
 m1Grp <- as.IFAgroup(m1Fit, minItemsPerScore = 1L)
+m1Grp$weightColumn <- 'freq'
 
 ## ----results='asis'---------------------------------------------------------------------------------------------------
 sfit <- SitemFit(m1Grp)
@@ -216,7 +220,7 @@ print(xtable(tbl, paste0('Sum-score item-wise fit.'), 'tab:e3-sitemfit', digits=
       table.placement="t!")
 
 ## ---------------------------------------------------------------------------------------------------------------------
-suppressWarnings(suppressMessages(summary(m1Fit, refModels=mxRefModels(m1Fit, run = TRUE))))
+summary(m1Fit, refModels=mxRefModels(m1Fit, run = TRUE))
 
 ## ----fig.height=1.5---------------------------------------------------------------------------------------------------
 map1 <- itemResponseMap(m1Grp, factor=1)

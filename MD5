@@ -1,14 +1,15 @@
-7e4c700a488a5b4d9d55baa8f9ffab3f *DESCRIPTION
+baa2fd00029049718a0c547422502752 *DESCRIPTION
 d486ef239d278fb1509817f04d7bd13c *NAMESPACE
 f43ecfacd7e18dc815745fc756157155 *R/apps.R
 3fb54d20b35634e9632fc6511ea29d54 *R/model.R
 6a1532e83e24a51fb7723f287677a84c *R/plot.R
 55c6c4513b1aa44aac6297e44b39f2e4 *R/prior.R
 3f5b17578220f4c30a28635d8b296a00 *README.md
-a0403146ad3e63ad1c4b4ea2d2e5ed45 *build/vignette.rds
+1ef49b245adfdf8fac71e8c14f2b43cb *build/vignette.rds
+1654bd30c83f15522f5bc20bd65928da *inst/CITATION
 4829703362474b63172a857810e5aca4 *inst/doc/pritikin-schmidt.R
 1bcf2a2c5d50198f3367af6ac36ecb4b *inst/doc/pritikin-schmidt.Rnw
-3c9fd26397f03aff2d0b79c0b7a2d49a *inst/doc/pritikin-schmidt.pdf
+c62f0af1855b7b7f7d7cda753d412607 *inst/doc/pritikin-schmidt.pdf
 10f313469d05856b2f794af5cec22720 *inst/example/exploratoryIFA.R
 e0abe3b711ff4ac44bd29c48179c9faa *inst/example/quadrature.R
 46da3745da2a37d6006f434a4770af32 *inst/itemModelExplorer/server.R
@@ -38,7 +39,7 @@ c3d18a344a2f111baedc5613fc9f96e7 *tests/testthat/test-prior.R
 5dd89c3dda8b2e96a3f1e2591893b248 *tools/build
 e8f7d19f1ccdf420ce53e37557ff8e32 *tools/check
 44f96bbfeb543e690fdb5679cfaf2ba6 *tools/install
-124b5a6ea7c552a64b2bdc83314fb485 *tools/rox
+27bb27f91fc33cda76eb8ce3b906b48a *tools/rox
 23176767b28fd781a63cedd301a854bc *tools/test
 66f8fdbeeaae09c999a0c6c7637bde48 *tools/vignetter
 7aa63dc39a51d9e6e9c7f73e31b2c2fb *vignettes/RJournal.sty

@@ -1,6 +1,12 @@
+getmode <- function(v) {
+   uniqv <- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
 plotTwoFactors <- function(slope) {
   lvm <- varimax(toFactorLoading(slope))$loadings   ## \label{e4:varimax}
-  if (any(abs(lvm[lvm < 0]) > .001)) stop("Got negative loadings")
+  flip <- apply(sign(lvm), 2, getmode)
+  lvm <- lvm * matrix(flip, byrow=TRUE, nrow=nrow(lvm), ncol=ncol(lvm))
   lvm[lvm<0] <- 0
   df <- as.data.frame(lvm[, 1:2])
   df$name <- rownames(df)
